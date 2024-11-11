@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logoo.png" alt="Learning Hub Logo">
+        </div>      
+
+        <nav class="nav-bar">      
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="alumni.html">Alumni</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <main class="about-main">
+        <section class="about-section">
+           
+            
+            <img src="images/l.png" alt="Our Team" class="about-image" style="width: 100%; height: 500px;">
+            <div class="video-container">
+                <video controls>
+                    <source src="Background group people network icon link connection technology loop animation 4k.mp4" type="video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <section class="project-details">
+            <h3>Project Vision</h3>
+            <p>Our vision is to create an environment where everyone has access to quality learning resources and expert guidance. This platform is a step toward building a global learning community.</p>
+
+            <h3>Project Objectives</h3>
+            <p>We aim to:</p>
+            <ul>
+                <li>Provide high-quality training and resources for learners.</li>
+                <li>Connect students with industry experts for mentorship.</li>
+                <li>Foster a community of learners who can collaborate and share knowledge.</li>
+            </ul>
+
+            <h3>Key Features</h3>
+            <p>Some of the key features of our platform include:</p>
+            <ol>
+                <li>Interactive learning modules.</li>
+                <li>Live webinars and Q&A sessions.</li>
+                <li>Extensive library of tutorials and guides.</li>
+            </ol>
+        </section>
+    </main>
+    
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-cards">
+            <div class="team-card">
+                <img src="images/team1.png" alt="Team Member 1">
+                <h3> Safa'</h3>
+                <p>Project Manager</p>
+                <p>Safa' has over 10 years of experience in project management and leads our team with passion and expertise.</p>
+            </div>
+            <div class="team-card">
+                <img src="images/team1.png" alt="Team Member 2">
+                <h3> Shima'</h3>
+                <p>Lead Developer</p>
+                <p>Shima' is a skilled developer with a knack for problem-solving and innovative solutions.</p>
+            </div>
+            <div class="team-card">
+                <img src="images/team1.png" alt="Team Member 3">
+                <h3>Emily </h3>
+                <p>UX/UI Designer</p>
+                <p>Emily designs user-friendly and visually appealing interfaces to enhance the user experience.</p>
+            </div>
+            <!-- يمكنك إضافة المزيد من البطاقات هنا -->
+        </div>
+    </section>
+    <footer class="main-footer">
+        <p>© 2024 Learning Hub Training. All rights reserved.</p>
+    </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-bar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

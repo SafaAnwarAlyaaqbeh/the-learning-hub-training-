@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Alumni - Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset Styles */
+#slider {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Slider Styles */
+.slider {
+   
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-container {
+    display: flex;
+    width: 300%; /* Adjust based on the number of slides */
+    animation: slide 12s infinite;
+}
+
+.slide {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logoo.png" alt="Learning Hub Logo">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="alumni.html">Alumni</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+<h1 style="text-align: center; font-size: xx-large;">Sucess</h1>
+<div id="slider">
+    <div class="slider">
+        <div class="slider-container">
+            <div class="slide"><img src="images/s1.jpg" alt="Image 1" style=" width: 1150px;
+    height: 550px;;"></div>
+            <div class="slide"><img src="images/s2.jpg" alt="Image 2"style=" width: 1150px;
+    height: 550px;;"></div>
+            <div class="slide"><img src="images/s3.jpg" alt="Image 2"style=" width: 1150px;
+    height: 550px;;"></div>
+
+        </div>
+    </div>
+</div>
+
+    <footer class="main-footer">
+        <p>© 2024 Learning Hub Training. All rights reserved.</p>
+    </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-bar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

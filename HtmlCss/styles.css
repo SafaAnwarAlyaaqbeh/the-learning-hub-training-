@@ -1,0 +1,252 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #282c34;
+    padding: 1rem 2rem;
+    color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 150px;
+    height: 120px;
+    border-radius: 60%;
+}
+
+.nav-bar {
+    flex-grow: 1;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-bar li a {
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Footer */
+.main-footer {
+    background: #282c34;
+    color: #d52727;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* Home Page */
+.hero {
+    background: url('images/logoa.jpeg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 2rem;
+}
+
+.animated-text {
+    font-size: 2.5rem;
+    animation: slideIn 2s linear infinite alternate;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 2rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-bar ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-bar.active ul {
+        display: flex;
+        background: #282c34;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .animated-text {
+        font-size: 2rem;
+    }
+}
+
+/* Team Section */
+.team-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.team-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.team-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+/* Project Intro Section */
+.project-intro {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.project-image {
+    width: 80%;
+    max-width: 600px;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.project-video {
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.project-video video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Project Details */
+.project-details {
+    padding: 2rem;
+}
+
+.project-details h3 {
+    margin-top: 1.5rem;
+    color: #333;
+}
+
+.project-details p, .project-details ul, .project-details ol {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.project-details ul li, .project-details ol li {
+    margin-bottom: 0.5rem;
+}
