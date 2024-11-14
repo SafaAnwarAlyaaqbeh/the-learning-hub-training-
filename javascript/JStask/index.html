@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Final Task</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #3b3bd7;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #3b3bd7;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f8f9fa;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .no-data {
+            text-align: center;
+            color: #777;
+        }
+
+        .form-group-radio {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-group-radio label {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Form To Table</h1>
+
+        <form id="dataForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group form-group-radio">
+                <label>Gender</label>
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="Male" required> Male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="Female" required> Female
+                </label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Submitted Data</h2>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="no-data">
+                    <td colspan="5">No data submitted yet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.getElementById('dataForm');
+        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        const noDataMessage = document.querySelector('.no-data');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            // Get form field values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+
+            // Check if no rows exist, remove the "No data" message
+            if (tableBody.getElementsByClassName('no-data').length) {
+                tableBody.innerHTML = '';
+            }
+
+            const newRow = tableBody.insertRow();
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = email;
+            newRow.insertCell(2).textContent = phone;
+            newRow.insertCell(3).textContent = password;
+            newRow.insertCell(4).textContent = gender;
+
+            form.reset();
+        });
+    </script>
+
+</body>
+
+</html>
